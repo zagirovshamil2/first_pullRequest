@@ -1,7 +1,11 @@
-import "./App.css";
+import { Counter } from './components/Counter/Counter'
 
-function App() {
-  return <div>Приложение работает очень хорошо!!!</div>;
+export const App = () => {
+  return (
+    <div>Приложение работает очень, очень хорошо!
+
+    <Counter />
+
+    </div>
+  )
 }
-
-export default App;
