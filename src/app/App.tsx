@@ -1,11 +1,10 @@
-import { Counter } from './components/Counter/Counter'
-import './App.css'
+
+import './styles/index.scss'
 
 export const App = () => {
   return (
     <>
     <div>Приложение работает очень, очень хорошо!</div>
-    <Counter />
     </>
   )
 }
