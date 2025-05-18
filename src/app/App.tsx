@@ -1,12 +1,14 @@
 import { HomePage } from '../pages/HomePage'
+import { Header, Footer } from '../widgets'
 import './styles/index.scss'
 
 
 export const App = () => {
   return (
     <>
-      <div>Приложение работает очень, очень хорошо!</div>
+      <Header />
       <HomePage />
+      <Footer />
     </>
   )
 }
