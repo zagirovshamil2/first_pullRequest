@@ -1,5 +1,46 @@
-@import 'node_modules/modern-normalize/modern-normalize.css';
-@import 'variables';
+@use 'variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
 
+ body {
+    font-family: $font-family-base;
+    font-weight: $font-weight-medium;
+    min-width: 100%;
+    height: 100%;
+    background-color: $neutral400-color;
+    line-height: $line-height-base;
+    color: $neutral800-color;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid $secondary100-color;
+  outline-offset: 2px;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
