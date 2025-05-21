@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { HomePage } from '../pages/HomePage'
 import { Header, Footer } from '../widgets'
 import './styles/index.scss'
-import { useFetch } from '../hooks/useFetch'
 
 
 export const App = () => {
@@ -11,19 +10,19 @@ const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const apiKey = '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'; // замени на свой API-ключ
+  // const apiKey = ''; // замени на свой API-ключ
 
-  const askDeepSeek = async (userQuestion) => {
+  const askDeepSeek = async (userQuestion:string) => {
     setLoading(true);
     try {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${apiKey}`,
+          "Authorization": `Bearer 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`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "deepseek/deepseek-chat-v3-0324:free",
+          model: "meta-llama/llama-3.3-8b-instruct:free",
           messages: [{ role: "user", content: userQuestion }]
         })
       });
@@ -70,12 +69,21 @@ const [question, setQuestion] = useState('');
         </button>
       </form>
 
-      {answer && (
+      { <div>  
+  <strong>Ответ:</strong> 
+
+
+  {
+    loading ? (
+      <div>Загрузка...</div>  
+    )
+  : answer ? (
         <div>
-          <strong>Ответ:</strong>
           <p>{answer}</p>
         </div>
-      )}
+      ) : null
+}  
+</div> }
     </div>
       
     </>
